@@ -1,0 +1,7 @@
+.offer {
+  padding: 5rem 1rem 5rem 1rem;
+  text-align: center;
+}
+.offer-list {
+  flex-direction: column;
+}
