@@ -47,6 +47,9 @@ em {
   display: block;
   max-width: 1200px;
   margin: auto;
+  overflow-x: hidden; /* Empêcher la barre de défilement horizontal */
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .title {
@@ -77,6 +80,7 @@ header {
   line-height: 1.8rem;
   position: sticky;
   top: 0px;
+  z-index: 2
 }
 
 .vp-logo {
@@ -123,7 +127,7 @@ header a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../images/fond.jpg) center center/cover;
+  background: url(../images/eiffel-fond.jpg) center center/cover;
 }
 
 .vp-content {
@@ -310,4 +314,137 @@ footer {
 
 footer p {
   margin-bottom: 0;
+}
+
+/* animation */
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation-name: fade-in-animation;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in2 {
+  opacity: 0;
+  animation-name: fade-in-animation;
+  animation-duration: 1s;
+  animation-delay: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+/* Définition des étapes de l'animation avec @keyframes */
+@keyframes apparitionDepuisLaGauche {
+  0% {
+    opacity: 0; /* L'élément est transparent au début de l'animation */
+    transform: translateX(-100%); /* L'élément est déplacé à gauche de 100% de sa largeur */
+  }
+  100% {
+    opacity: 1; /* L'élément est complètement opaque à la fin de l'animation */
+    transform: translateX(0); /* L'élément revient à sa position d'origine */
+  }
+}
+
+/* Application de l'animation à l'élément cible */
+.element-cible {
+  opacity: 0; /* L'élément est initialement transparent */
+  animation-name: apparitionDepuisLaGauche; /* Nom de l'animation définie avec @keyframes */
+  animation-duration: 2s; /* Durée de l'animation en secondes */
+  animation-timing-function: ease-out; /* Fonction de temporisation pour l'animation */
+  animation-fill-mode: forwards; /* L'élément conserve les styles de la dernière étape de l'animation */
+  animation-play-state: paused; /* L'animation est en pause par défaut */
+}
+
+/* Définition des étapes de l'animation avec @keyframes */
+@keyframes apparitionDepuisLaDroite {
+  0% {
+    opacity: 0; /* L'élément est transparent au début de l'animation */
+    transform: translateX(100%); /* L'élément est déplacé à droite de 100% de sa largeur */
+  }
+  100% {
+    opacity: 1; /* L'élément est complètement opaque à la fin de l'animation */
+    transform: translateX(0); /* L'élément revient à sa position d'origine */
+  }
+}
+
+/* Application de l'animation à l'élément cible */
+.element-cible3 {
+  opacity: 0; /* L'élément est initialement transparent */
+  animation-name: apparitionDepuisLaDroite; /* Nom de l'animation définie avec @keyframes */
+  animation-duration: 2s; /* Durée de l'animation en secondes */
+  animation-timing-function: ease-out; /* Fonction de temporisation pour l'animation */
+  animation-fill-mode: forwards; /* L'élément conserve les styles de la dernière étape de l'animation */
+  animation-play-state: paused; /* L'animation est en pause par défaut */
+}
+
+/* Animation de grossissement pour l'image */
+.image-milieu {
+  animation-name: grossissement;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+@keyframes grossissement {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-fond {
+  opacity: 0; /* Masquer l'image de fond initialement */
+  animation-name: apparition-image-fond;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes apparition-image-fond {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.titre-milieu {
+  opacity: 0; /* Masquer le titre au milieu initialement */
+  transform: translateY(50px); /* Déplacer le titre vers le bas de 50 pixels */
+  animation-name: apparition-titre-milieu;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes apparition-titre-milieu {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
