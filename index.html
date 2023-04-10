@@ -30,9 +30,9 @@
     <header class="fade-in">
       <h2 class="vp-logo">
         <img src="./images/icon-confidentiel.png" alt="">
-        <a href="#">Confidentiel</a>
+        <a href="index.html">Confidentiel</a>
       </h2>
-      <ul>
+      <ul class="navbar">
         <li><a href="#acceuil">Acceuil</a></li>
         <li><a href="#offer">Nos offres</a></li>
         <li><a href="#team">Notre equipe</a></li>
@@ -176,7 +176,7 @@
             <div class="testimonials-elem-profil">
               <img src="./images/mimie-mathy.jpg" alt="person-3" />
               <p>Joséphine</p>
-              <em>Magicienne</em>
+              <em>Ange Gardien</em>
             </div>
           </div>
         </div>
@@ -185,19 +185,13 @@
     <section id="contact" class="contact bg-dark">
       <form action="#" class="contact-form">
         <h2 class="title"><strong>Contactez</strong> nous</h2>
-        <input type="text" placeholder="Nom" name="name" id="name" />
-        <input type="email" placeholder="Email" name="email" id="email" />
-        <input
-          type="text"
-          placeholder="Votre message ..."
-          name="message"
-          id="message"
-        />
-        <div>
-          <button>
-            <a href="mailto:thomas.barrais@estp.fr">Soumettre</a>
-          </button>
-        </div>
+        <label for="nom">Nom :</label>
+        <input type="text" placeholder="Votre nom" id="nom" name="nom" required>
+        <label for="message">Message :</label>
+        <input type="text" placeholder="Votre message" id="message" name="message" required/>
+        <button onclick="envoyerEmail()">
+          <a href="">Soumettre</a>
+        </button>
       </form>
     </section>
     <footer>

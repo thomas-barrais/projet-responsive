@@ -32,15 +32,6 @@ header ul li {
   font-weight: 400;
 }
 
-/* offer */
-/* 
-.offer {
-  padding: 5rem 1rem 5rem 1rem;
-  text-align: center;
-}
-.offer-list {
-  flex-direction: column;
-} */
 
 /* who */
 
@@ -59,7 +50,7 @@ header ul li {
 /* testimonials */
 
 .testimonials-elem-text p {
-  text-align: center !important;
+  text-align: center;
 }
 
 .testimonials-elem-text p {
