@@ -63,10 +63,10 @@ header ul li {
   text-align: center !important;
 }
 
-.testimonials-elem-text p {
+/* .testimonials-elem-text p {
   max-width: 300px;
   max-height: 500px;
-}
+} */
 
 .testimonials-elem {
   flex-direction: column;
