@@ -8,6 +8,7 @@
 
 header {
   flex-direction: column;
+  position: relative;
 }
 
 header ul {
@@ -58,6 +59,15 @@ header ul li {
 
 /* testimonials */
 
+.testimonials-elem-text p {
+  text-align: center !important;
+}
+
+.testimonials-elem-text p {
+  max-width: 300px;
+  max-height: 500px;
+}
+
 .testimonials-elem {
   flex-direction: column;
 }
@@ -66,7 +76,7 @@ header ul li {
   flex-direction: column-reverse;
 }
 
-.testimonials-elem-profil-text {
+.testimonials-elem-profil p {
   text-align: center;
 }
 

@@ -56,6 +56,7 @@ em {
   font-weight: 300;
   font-size: 2rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .bg-dark {
@@ -217,8 +218,21 @@ header a {
 
 /* testimonials */
 
+.container-testimonials {
+  display: block;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.text-reverse {
+  text-align: right;
+}
+
 .testimonials {
   padding: 5rem 1rem 5rem 1rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .testimonials-content {
@@ -239,13 +253,18 @@ header a {
 }
 
 .testimonials-elem-text {
-  padding: 0 2rem;
+  padding: 0.2rem;
 }
+
+.testimonials-elem-text p {
+  float: left;
+}
+
 .testimonials-elem-text p i {
   margin: 0.2rem;
 }
 
-.testimonials-elem-profil-text p {
+.testimonials-elem-profil p {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -342,6 +361,15 @@ footer p {
   animation-fill-mode: forwards;
 }
 
+.fade-in2-scroll {
+  opacity: 0;
+  animation-name: fade-in-animation;
+  animation-duration: 1s;
+  animation-delay: 0.9s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
 /* Définition des étapes de l'animation avec @keyframes */
 @keyframes apparitionDepuisLaGauche {
   0% {
@@ -386,11 +414,31 @@ footer p {
   animation-play-state: paused; /* L'animation est en pause par défaut */
 }
 
-/* Animation de grossissement pour l'image */
-.image-milieu {
-  animation-name: grossissement;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
+.avis1 {
+  opacity: 0;
+  animation-name: apparitionDepuisLaDroite;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.avis2 {
+  opacity: 0;
+  animation-name: apparitionDepuisLaDroite;
+  animation-duration: 1.7s;
+  animation-delay: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.avis3 {
+  opacity: 0;
+  animation-name: apparitionDepuisLaDroite;
+  animation-duration: 2.1s;
+  animation-delay: 0.4s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-play-state: paused;
 }
@@ -410,13 +458,13 @@ footer p {
   }
 }
 
-.image-fond {
-  opacity: 0; /* Masquer l'image de fond initialement */
-  animation-name: apparition-image-fond;
-  animation-duration: 1s;
+/* Animation de grossissement pour l'image */
+.image-milieu {
+  animation-name: grossissement;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
-  animation-delay: 0.5s;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
 }
 
 @keyframes apparition-image-fond {
@@ -428,13 +476,12 @@ footer p {
   }
 }
 
-.titre-milieu {
-  opacity: 0; /* Masquer le titre au milieu initialement */
-  transform: translateY(50px); /* Déplacer le titre vers le bas de 50 pixels */
-  animation-name: apparition-titre-milieu;
+.image-fond {
+  opacity: 0; /* Masquer l'image de fond initialement */
+  animation-name: apparition-image-fond;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: both;
 }
 
@@ -447,4 +494,14 @@ footer p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.titre-milieu {
+  opacity: 0; /* Masquer le titre au milieu initialement */
+  transform: translateY(50px); /* Déplacer le titre vers le bas de 50 pixels */
+  animation-name: apparition-titre-milieu;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
 }
