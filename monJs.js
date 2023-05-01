@@ -10,25 +10,22 @@ function envoyerEmail() {
 
 
 // JavaScript pour détecter quand l'objet est visible dans la fenêtre du navigateur
-window.addEventListener('scroll', function() {
-  var elementCible = document.querySelector('.element-cible');
+function startAnimation(elementClass) {
+  var elementCible = document.querySelector(elementClass);
   var positionTop = elementCible.getBoundingClientRect().top;
   var windowHeight = window.innerHeight;
 
-  if (positionTop - windowHeight + 50 <= 0) { // L'objet est visible dans la fenêtre avec un décalage de 50 pixels
-    elementCible.style.animationPlayState = 'running'; // Jouer l'animation en modifiant la propriété animation-play-state
-  }
-});
-
-window.addEventListener('scroll', function() {
-  var elementCible = document.querySelector('.element-cible3');
-  var positionTop = elementCible.getBoundingClientRect().top;
-  var windowHeight = window.innerHeight;
-
-  if (positionTop - windowHeight + 50 <= 0) { 
+  if (positionTop - windowHeight + 50 <= 0) {
     elementCible.style.animationPlayState = 'running';
   }
+}
+
+window.addEventListener('scroll', function() {
+  startAnimation('.element-cible');
+  startAnimation('.element-cible3');
+  startAnimation('.image-milieu');
 });
+
 
 window.addEventListener('scroll', function() {
   var elementCible1 = document.querySelector('.avis1'); // Cibler le premier élément avec la classe 'avis1'
@@ -50,15 +47,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-window.addEventListener('scroll', function() {
-  var elementCible = document.querySelector('.image-milieu');
-  var positionTop = elementCible.getBoundingClientRect().top;
-  var windowHeight = window.innerHeight;
-
-  if (positionTop - windowHeight + 50 <= 0) {
-    elementCible.style.animationPlayState = 'running';
-  }
-});
 
 window.addEventListener('scroll', function() {
   var elementCible = document.querySelector('.fade-in2-scroll');
